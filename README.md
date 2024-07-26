@@ -1,116 +1,126 @@
-# dynamic-question-flow
-ui design to collect user info that simple, efficient. *(done as an employment proposal to LYKAS)
+# Conditional Question Flow System
 
+## Overview
 
-# Dynamic Question Flow System
-
-## Project Overview
-This project is a dynamic question flow system designed to collect user information efficiently. The system presents questions based on the user's previous answers, ensuring that only relevant questions are displayed. The focus is on gathering personal, partner, children, and real estate information in a structured manner.
+The Conditional Question Flow System is a dynamic web application designed to streamline the collection of user information by presenting relevant questions based on previous responses. This ensures a more efficient and tailored data collection process. The system also gathers detailed address and real estate information, adjusting questions based on whether the user owns their primary residence and other real estate properties.
 
 ## Features
-- **User Authentication**: Secure login system.
-- **Dynamic Question Flow**: Questions adjust based on user responses.
-- **Conditional Rendering**: Specific questions appear only when relevant.
-- **Responsive UI**: User-friendly and mobile-compatible interface.
-- **Data Persistence**: Answers are saved in local storage for continuity.
 
-## Technologies Used
-- **Vue.js**: For building the dynamic front-end.
-- **Vue Router**: For handling multi-page navigation.
-- **HTML & JavaScript**: Basic web technologies.
+1. **Dynamic Question Flow**
+   - Subsequent questions are determined based on the user's responses to initial queries.
+   - Only relevant questions are presented, ensuring a streamlined user experience.
 
-## Setup Instructions
+2. **User Authentication**
+   - Secure login and registration system to protect user data.
+
+3. **Comprehensive Data Collection**
+   - Collects personal information, partner information (if applicable), children information, primary residence details, other real estate details, and real estate value.
+
+4. **Navigation Buttons**
+   - Each page includes "Next" and "Previous" buttons for easy navigation.
+   - The first page does not have a "Previous" button.
+   - The last page (Preview page) does not have a "Next" button.
+
+5. **Preview Page**
+   - At the end of the questionnaire, users can review all their answers on a summary page.
+   - Only the questions that satisfy the conditions are displayed.
+
+## How to Use
+
+### Getting Started
+
+1. **Login/Register**
+
+   - Navigate to `/login` to log in with your credentials.
+   - Navigate to `/register` to create a new account.
+
+2. **Complete the Questionnaire**
+
+   - Start the questionnaire from the root path `/`.
+   - Fill out your personal information.
+   - Navigate through the pages using the "Next" and "Previous" buttons.
+   - Review your answers on the preview page and submit the form.
+
+## Installation and Setup
 
 ### Prerequisites
-- Ensure you have [Node.js](https://nodejs.org/) installed.
-- Basic knowledge of Vue.js and JavaScript.
+
+- Node.js and npm installed on your machine.
 
 ### Installation
 
-1. **Clone the Repository**:
-   ```sh
-   git clone https://github.com/ashleyer/dynamic-question-flow.git
-   cd dynamic-question-flow
-   ```
+1. **Clone the Repository**
 
-2. **Open in VS Code**:
-   ```sh
-   code .
-   ```
+   ```bash
+   git clone https://github.com/your-repo/conditional-question-flow.git
+   cd conditional-question-flow
 
-3. **  **:
+   	2.	Install Dependencies
+    npm install
 
-4. **   **:
+    Running the Application
 
-5. **Start a Local Server**:
-   - Open terminal and run:
-     ```sh
-     python -m http.server 8000
-     ```
-   - Open your browser and go to `http://localhost:8000`.
+	3.	Run the Development Server
+    npm run serve
 
-## Usage
+    tests here
 
-### User Interaction Flow
+    Project Structure
+    conditional-question-flow/
+├── public/
+│   ├── index.html
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── ChildrenInformation.vue
+│   │   ├── NavigationButtons.vue
+│   │   ├── OtherRealEstate.vue
+│   │   ├── PartnerInformation.vue
+│   │   ├── PersonalInformation.vue
+│   │   ├── PrimaryResidence.vue
+│   │   ├── PreviewPage.vue
+│   │   ├── RealEstateValue.vue
+│   ├── views/
+│   │   ├── Login.vue
+│   │   ├── Register.vue
+│   ├── App.vue
+│   ├── main.js
+├── tests/
+│   ├── unit/
+│   │   ├── PersonalInformation.spec.js
+├── cypress/
+│   ├── integration/
+│   │   ├── personal_information_spec.js
+│   ├── plugins/
+│   │   ├── index.js
+│   ├── support/
+│   │   ├── commands.js
+│   │   ├── index.js
+├── .gitignore
+├── babel.config.js
+├── cypress.json
+├── jest.config.js
+├── package.json
+├── README.md
 
-1. **Personal Information**:
-   - User provides their full legal name, birth year, and marital status.
-   - Conditional question on whether the user has children.
+Contact
 
-2. **Partner Information**:
-   - If the user is not single, they provide their partner's information.
+For any questions or support, please contact ashleye.romano@gmail.com.
 
-3. **Children Information**:
-   - If the user has children, they provide details about their children.
+License
 
-4. **Primary Residence Information**:
-   - User indicates if they own their primary residence.
-   - If yes, additional questions about mailing address and real estate value.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-5. **Other Real Estate Information**:
-   - User indicates if they own other real estate.
-   - If yes, they provide the value of the real estate.
-   - If no, they are asked about future real estate plans and financial goals.
+Acknowledgements
 
-6. **Preview Page**:
-   - All collected answers are displayed for review.
-   - User can go back and edit any section.
+Special thanks to the LYKAS team for the opportunity to create this project.
 
-### Navigation
-- **Next Button**: Moves to the next relevant question or section.
-- **Previous Button**: Goes back to the previous question or section.
-- **Preview Page**: Displays all answers for review and editing.
 
-## Development Notes
-
-### Project Structure
-```
-dynamic-question-flow/
-├── index.html
-└── app.js
-```
-
-### Key Components
-- **PersonalInfo**: Handles personal details.
-- **ChildrenInfo**: Collects information about children.
-- **ResidenceInfo**: Gathers primary residence details.
-- **ResidenceValue**: Collects residence value information.
-- **OtherRealEstate**: Gathers information about other real estate properties.
-- **FutureRealEstate**: Asks about future real estate plans.
-- **FinancialGoals**: Collects information about financial goals.
-- **Preview**: Displays all collected information for review.
-
-## Contributing
-- Fork the repository.
-- Create a new branch for your feature: `git checkout -b feature-name`.
-- Commit your changes: `git commit -m 'Add some feature'`.
-- Push to the branch: `git push origin feature-name`.
-- Submit a pull request.
-
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## Contact
-For any questions or feedback, please contact [ashleye.romano@gmail.com](mailto:ashleye.romano@gmail.com).
+Known Bugs/Future Improvements
+-previous buttons don't work
+-css could be better 
+-login and register have to be entered into the http address to access
+-login is only a simulation, could be implemented with api call
+-readme needs some markdown translation
+-testing unfinished
+-not deployed to cloud
